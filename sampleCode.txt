@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+	char* bookNameArr[100];
+	int bookIndex = 0;
+
+	while (true)
+	{
+		printf("1번 입력하면 책 이름 입력\n2번 입력하면 책 찾기\n3번 책 목록 모두 확인\n");
+		int number;
+		scanf("%d", &number);
+
+		if (number == 1)
+		{
+			char bookName[20];
+			printf("책 이름 (20글자까지만 입력) : ");
+			scanf("%s", bookName);
+			bookNameArr[bookIndex] = bookName;
+			bookIndex++;
+		}
+		else if(number == 2)
+		{
+			char bookName[20];
+			printf("찾을 책 이름 책 이름 (20글자까지만 입력) : ");
+			scanf("%s", bookName);
+
+			for (int i = 0; i <= bookIndex; i++)
+			{
+				char *bookNameEle = bookNameArr[i]; 
+				// 문자열의 길이를 구하는 함수 구현
+				// 문자열의 각 인덱스가 같은지 
+
+			}
+		}
+		else if (number == 3)
+		{
+			if (bookIndex == 0)
+			{
+				printf("책이 없습니다.\n");
+				continue;
+			}
+
+			for (int i = 0; i < bookIndex; i++)
+			{
+				printf("책 이름 : %s\n", bookNameArr[i]);
+			}
+		}
+	}
+}
